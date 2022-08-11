@@ -3,13 +3,14 @@ from tkinter import *
 
 
 def a2d(a):
+#     Unicodes to represent the dice faces
     faces = ['\u2680', '\u2681', '\u2682', '\u2683', '\u2684', '\u2685']
     s = ''
     for i in a:
         s += faces[i - 1]
     return s
 
-
+# this function to be used if you want to show numbers instead of dice faces
 def a2s(a):
     s = ''
     for i in a:
@@ -33,9 +34,9 @@ def submit():
         for i in range(num):
             op.append(random.randint(1, 6))
         l2.config(text=f'{a2d(op)}')
-        # l1.config(text=f'{num}')
         l2.pack()
-
+        
+# new window will be opened on the top of earlier window
     newwind = Toplevel(root1)
     newwind.title = "Dice Simulator"
     newwind.geometry("700x450")
